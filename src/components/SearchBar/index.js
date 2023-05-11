@@ -1,12 +1,19 @@
 import { PhoneIcon, Search2Icon, SearchIcon } from '@chakra-ui/icons'
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function SearchBar({props}) {
+export default function SearchBar() {
+  const [term, setTerm] = useState("");
   const navigator = useNavigate();
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setTerm( prevTerm => value );
+    // console.log(term);
+  }
   const goToResults = () => {
-    navigator('/searchresultspage')
+    navigator('/searchresultspage', {state: term});
   }
   return (
     <form onSubmit={goToResults}>
@@ -23,6 +30,7 @@ export default function SearchBar({props}) {
             bg='backgroundColors.tertiaryBG'
             py='24px'
             placeholder='Search for products, categories, or businesses'
+            onChange={handleChange}
         />
       </InputGroup>
     </form>

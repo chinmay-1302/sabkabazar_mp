@@ -15,7 +15,7 @@ export default function ProductContainer() {
       index: 2,
       productName: "Jerry",
       desc: "Context",
-      price: "Rs. 50",
+      price: "Rs. 5,000",
     },
     {
       index: 3,

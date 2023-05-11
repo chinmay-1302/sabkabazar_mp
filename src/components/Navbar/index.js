@@ -57,19 +57,21 @@ export default function Navbar() {
               Login
             </Button>
           </NavLink>
-          <IconButton
-              align='center'
-              icon={<IoBag color='white' size='20px' />}
-              bg='accentColors.accentBlue'
-              p='8px'
-              borderRadius='50%'
-              aria-label='Add to Cart'
-              _hover={
-                  {
-                      bg: 'accentColors.accentDarkBlue'
-                  }
-              }
-          />
+          <NavLink to='/cartpage'>
+            <IconButton
+                align='center'
+                icon={<IoBag color='white' size='20px' />}
+                bg='accentColors.accentBlue'
+                p='8px'
+                borderRadius='50%'
+                aria-label='Add to Cart'
+                _hover={
+                    {
+                        bg: 'accentColors.accentDarkBlue'
+                    }
+                }
+            />
+          </NavLink>
         </HStack>
       </HStack>
     </Container>

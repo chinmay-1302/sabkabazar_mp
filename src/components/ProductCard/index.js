@@ -13,13 +13,22 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
 import giftCard from "./images/giftCard.jpg";
 import { IoBagAdd } from "react-icons/io5";
-import { Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ProductContext, ProductDispatchContext } from "../../Context/productProvider";
 
 
 function ProductCard(props) {
+  const posts = useContext(ProductContext);
+  const setPosts = useContext(ProductDispatchContext);
+
+  const productData = [props.productName, props.desc, props.price, props.seller, props.details];
+
+  const productAddHandler = () => {
+    setPosts(productData)
+  }
   // const navigator = useNavigate();
   // const handleClick = () => {
   //     console.log(props)
@@ -39,7 +48,7 @@ function ProductCard(props) {
           _hover={{
             bg: "backgroundColors.secondaryBG",
           }}
-          // onClick={handleClick}
+          onClick={productAddHandler}
         >
           <CardBody gap="8px">
             <Box
