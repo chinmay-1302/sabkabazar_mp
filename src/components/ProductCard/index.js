@@ -18,8 +18,14 @@ import giftCard from "./images/giftCard.jpg";
 import { IoBagAdd } from "react-icons/io5";
 import { Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
 
+import { useContext } from "react";
+import { ProductDispatchContext, ProductContext } from "../../context/productProvider";
+
 
 function ProductCard(props) {
+    const posts = useContext(ProductContext)
+    const setPosts = useContext(ProductDispatchContext)
+
   // const navigator = useNavigate();
   // const handleClick = () => {
   //     console.log(props)
@@ -27,6 +33,12 @@ function ProductCard(props) {
   //     {props}
   //     )
   // }
+  const productData = [props.productName,props.desc,props.price,props.seller,props.details]
+  
+  const productAddHandler =()=>{
+    setPosts(productData);
+  }
+
   return (
       <Link to={`/productpage`}>
         <Card
@@ -39,7 +51,7 @@ function ProductCard(props) {
           _hover={{
             bg: "backgroundColors.secondaryBG",
           }}
-          // onClick={handleClick}
+          onClick={productAddHandler}
         >
           <CardBody gap="8px">
             <Box
