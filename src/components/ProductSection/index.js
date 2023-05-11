@@ -4,9 +4,15 @@ import React from 'react'
 import lapImg from './images/proServices.jpg'
 import {IoBagAdd} from 'react-icons/io5'
 import { useNavigate, useNavigation } from 'react-router-dom'
+import { ProductDispatchContext, ProductContext } from "../../context/productProvider";
+import { useContext } from 'react'
+
 
 
 export default function ProductSection(props) {
+
+    const posts = useContext(ProductContext)
+    const setPosts = useContext(ProductDispatchContext)
 
     const navigator = useNavigate();
 
@@ -77,14 +83,14 @@ export default function ProductSection(props) {
                             fontWeight='bold'
                             color='textColors.primaryText'
                         >
-                            {props.productName}
+                            {posts[0]}
                         </Heading>
                         <Text
                             fontSize='24px'
                             fontWeight='medium'
                             color='textColors.secondaryText'
                         >
-                            {props.desc}
+                            {posts[0]}
                         </Text>
                     </VStack>
                     <Text
@@ -92,7 +98,7 @@ export default function ProductSection(props) {
                         fontWeight='black'
                         color='textColors.primaryText'
                     >
-                        {props.price}
+                        {posts[2]}
                     </Text>
                     <HStack
                         gap='4px'
@@ -104,13 +110,14 @@ export default function ProductSection(props) {
                             color='textColors.tertiaryText'
                         >
                             By: 
+                            {posts[3]}
                         </Text>
                         <Text
                             fontSize='20px'
                             fontWeight='medium'
                             color='textColors.tertiaryText'
                         >
-                            {props.seller}
+                            {posts[1]}
                         </Text>
                     </HStack>
                 </VStack>
@@ -176,7 +183,7 @@ export default function ProductSection(props) {
                     fontWeight='medium'
                     color='textColors.secondaryText'
                 >
-                    {props.details}
+                    {posts[4]}
                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim odio faucibus nec malesuada purus volutpat vel sed viverra. Id sagittis, phasellus dui in arcu. Nec arcu, sit nunc, nibh purus pellentesque sagittis. Felis rhoncus facilisis massa eget purus in purus. Etiam at cras nulla nunc. Malesuada in pretium diam scelerisque sit mattis in egestas neque. Eu porta tempor sodales nisl integer turpis porttitor sed sed. Ut senectus odio dictum enim velit tempor diam quisque suspendisse.
                 
                 Orci vel ridiculus diam viverra. Libero malesuada orci, quis placerat suscipit augue imperdiet. Et praesent augue dictum mauris eget lacus malesuada. Aenean nisi, sodales natoque massa magna dignissim mi. Mattis tellus, justo, lorem sed tempor diam sit viverra enim. Id id placerat eu etiam nulla laoreet. */}
