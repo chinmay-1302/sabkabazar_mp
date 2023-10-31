@@ -1,5 +1,7 @@
 # Sabkabazar - A React based E-commerce website
 
+![Sabkabazar](https://imgur.com/i1mR1Qo)
+
 ## Project Statement
 Design, develop, and deploy a user-friendly e-commerce cosmetics website that offers a wide range of products, seamless shopping experience, ensures checkout, and interactive features to enhance customer engagement and satisfaction by providing them with reviews and ratings.
 
